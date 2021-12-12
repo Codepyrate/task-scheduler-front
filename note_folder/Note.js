@@ -102,9 +102,9 @@ export default function Note() {
           </div>
         </div>
         <div className="w-32 text-center border-2 border-indigo-600 border-dashed mt-28 ">
-          <Link href="/FormNote" ><a className="mb-9">Add New Note</a></Link>
-
-        </div>
+         <Link href="./pages/note_folder/FormNote"><a className="mb-9">Add New Note</a>
+          </Link>
+          </div>
       </div>
 
     </main>
