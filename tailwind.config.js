@@ -5,7 +5,10 @@ module.exports = {
     './Search_topics/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {backgroundImage: {
+      
+      'footer-texture': "url('https://cdn.pixabay.com/photo/2020/05/19/01/58/milky-way-5188931__340.jpg')",
+    }},
   },
   plugins: [],
 }
