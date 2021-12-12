@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { useState } from 'react'
 
 export default function Task() {
+    
     const [userInput, setUserInput] = useState('')
     const [TaskList, setTaskList] = useState([])
     const handleChange = (e) =>{
@@ -24,6 +25,15 @@ export default function Task() {
         setTaskList(updateArr)
     }
 
+    const handleEdit = (task) => {
+        const updated = TaskList.filter(taskItem => TaskList.indexOf(taskItem) != TaskList.indexOf(task))
+        setTaskList([
+            userInput,
+            ...TaskList
+        ])
+        setUserInput('')
+    }
+
     return (
         <div>
             <div className='p-20'>
@@ -40,7 +50,11 @@ export default function Task() {
                         <button onClick={(e) => {
                             e.preventDefault()
                             handleDelete(task)
-                        }} className="absolute p-1 text-white bg-red-600 rounded-lg right-20 hover:bg-red-700">❌</button></li>
+                        }} className="absolute p-1 text-white bg-red-600 rounded-lg right-20 hover:bg-red-700">❌</button>
+                        <button onClick={(e) => {
+                            e.preventDefault()
+                            handleEdit(task)
+                        }} className="absolute p-1 text-white bg-blue-600 rounded-lg right-10 hover:bg-blue-700">Edit</button></li>
                     })
                     : ''
                 }
