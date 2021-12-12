@@ -4,16 +4,16 @@ import FormNote from "./FormNote"
 
 export default function Note() {
   return (
-
+// mr-12
     <main >
       <div className=""></div>
-      <header className="grid grid-cols-3 p-2 mb-1 text-4xl text-center bg-slate-200 gap-x-20 ">
+      <header className="grid grid-cols-3 p-2 mt-0 text-4xl text-center bg-slate-200 gap-x-20 ">
         <p className="font-thin">Logo</p>
         <p className="font-medium text-center ">Note Schdualer</p>
         <p className="font-thin">Log out</p>
 
       </header>
-      <div className="grid gap-4 grid-cols-3 grid-rows-3 mt-14 ml-2.5">
+      <div className="grid grid-cols-3 grid-rows-3 gap-4 ml-12 mr-12 mt-14">
 
         <div className="bg-yellow-100 shadow-lg"><h2 className="text-center break-normal">Exam</h2>
           <h2 className="break-normal">Day:Sunday</h2>
