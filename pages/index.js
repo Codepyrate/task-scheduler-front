@@ -1,15 +1,13 @@
 import Head from 'next/head'
+
 import Header from '../Search_topics/Header'
 import Search_topics from '../Search_topics/Search_topics'
 import Footer from '../Search_topics/Footer'
-
+import FormNote from '../note_folder/FormNote'
+import Note from '../note_folder/Note'
 export default function Home() {
   return (
-    <div>
-      <Header/>
-      <Search_topics/>
-      <Footer/>
-    
-    </div>
+   
+
   )
 }
