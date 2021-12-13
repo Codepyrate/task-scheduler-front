@@ -1,10 +1,11 @@
 import React, { useState, Fragment } from "react";
 import { nanoid } from "nanoid";
 import data from "../static-data.json";
-
+import ReadTask from "./ReadTask";
+import EditTask from "./EditTask";
 
 const App = () => {
-  const [tasks, setTask] = useState(data);
+  const [tasks, setTasks] = useState(data);
   const [addFormData, setAddFormData] = useState({
     TaskTitle: "",
     Description: "",
@@ -31,20 +32,6 @@ const App = () => {
     setAddFormData(newFormData);
   };
 
-  const handleAddFormSubmit = (event) => {
-    event.preventDefault();
-
-    const newTask = {
-      id: nanoid(),
-      TaskTitle: addFormData.TaskTitle,
-      Description: addFormData.Description,
-      TaskTime: addFormData.TaskTime,
-    };
-
-    const newTask = [...tasks, newTask];
-    setTask(newTask);
-  };
-
   const handleEditFormChange = (event) => {
     event.preventDefault();
 
@@ -68,7 +55,7 @@ const App = () => {
     };
 
     const newTasks = [...tasks, newTask];
-    setTask(newTasks);
+    setTasks(newTasks);
   };
 
   const handleEditFormSubmit = (event) => {
@@ -87,7 +74,7 @@ const App = () => {
 
     newTasks[index] = editedTask;
 
-    setTask(newTasks);
+    setTasks(newTasks);
     setEditTaskId(null);
   };
 
@@ -115,10 +102,8 @@ const App = () => {
 
     newTasks.splice(index, 1);
 
-    setTask(newTasks);
+    setTasks(newTasks);
   };
-
-
 
   return (
     <div className="app-container">
@@ -178,7 +163,7 @@ const App = () => {
           placeholder="Add time..."
           onChange={handleAddFormChange}
         />
-        <button type="submit" className="text-white bg-green-600 rounded-lg hover:bg-green-700">Add Task</button>
+        <button type="submit" className="text-black bg-green-600 rounded-lg hover:bg-green-700">Add Task</button>
       </form>
     </div>
   );
