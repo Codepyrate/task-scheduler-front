@@ -4,7 +4,7 @@ import data from "../static-data.json";
 
 
 const App = () => {
-  const [task, setTask] = useState(data);
+  const [tasks, setTask] = useState(data);
   const [addFormData, setAddFormData] = useState({
     TaskTitle: "",
     Description: "",
@@ -41,7 +41,7 @@ const App = () => {
       TaskTime: addFormData.TaskTime,
     };
 
-    const newTask = [...task, newTask];
+    const newTask = [...tasks, newTask];
     setTask(newTask);
   };
 
@@ -67,7 +67,7 @@ const App = () => {
       TaskTime: addFormData.TaskTime,
     };
 
-    const newTasks = [...task, newTask];
+    const newTasks = [...tasks, newTask];
     setTask(newTasks);
   };
 
@@ -81,9 +81,9 @@ const App = () => {
       TaskTime: editFormData.TaskTime,
     };
 
-    const newTasks = [...task];
+    const newTasks = [...tasks];
 
-    const index = task.findIndex((task) => task.id === editTaskId);
+    const index = tasks.findIndex((task) => task.id === editTaskId);
 
     newTasks[index] = editedTask;
 
@@ -109,9 +109,9 @@ const App = () => {
   };
 
   const handleDeleteClick = (taskId) => {
-    const newTasks = [...task];
+    const newTasks = [...tasks];
 
-    const index = task.findIndex((task) => task.id === taskId);
+    const index = tasks.findIndex((task) => task.id === taskId);
 
     newTasks.splice(index, 1);
 
@@ -121,8 +121,66 @@ const App = () => {
 
 
   return (
-    <>
-    </>
+    <div className="app-container">
+        <h1 id="heading">Task Manager</h1>
+      <form onSubmit={handleEditFormSubmit}>
+        <table>
+          <thead>
+            <tr>
+              <th>Task title</th>
+              <th>Description</th>
+              <th>Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tasks.map((task) => (
+              <Fragment>
+                {editTaskId === task.id ? (
+                  <EditTask
+                    editFormData={editFormData}
+                    handleEditFormChange={handleEditFormChange}
+                    handleCancelClick={handleCancelClick}
+                  />
+                ) : (
+                  <ReadTask
+                    task={task}
+                    handleEditClick={handleEditClick}
+                    handleDeleteClick={handleDeleteClick}
+                  />
+                )}
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      </form>
+
+      <h1>Add a new Task</h1>
+      <form onSubmit={handleAddFormSubmit}>
+        <input
+          type="text"
+          name="TaskTitle"
+          required="required"
+          placeholder="Enter Task title..."
+          onChange={handleAddFormChange}
+        />
+        <input
+          type="text"
+          name="Description"
+          required="required"
+          placeholder="Add a description..."
+          onChange={handleAddFormChange}
+        />
+        <input
+          type="time"
+          name="TaskTime"
+          required="required"
+          placeholder="Add time..."
+          onChange={handleAddFormChange}
+        />
+        <button type="submit" className="text-white bg-green-600 rounded-lg hover:bg-green-700">Add Task</button>
+      </form>
+    </div>
   );
 };
 
