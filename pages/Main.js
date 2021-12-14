@@ -2,6 +2,8 @@ import HandleNote from '../components/note_folder/HandleNote'
 import Note from "../components/note_folder/Note"
 import {useState} from "react"
 import React from 'react'
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 export default function Main(props) {
     const [sotreData, setStoreData] = useState([]);
@@ -27,11 +29,13 @@ export default function Main(props) {
         <div>
             {/* <Note sotreData={props.sotreData} /> */}
 
-            <HandleNote noteHandler={noteHandler} />
+            <Header/>
             {sotreData ?
                 <Note sotreData={sotreData} />
                 : <h2 className="text-center">noo</h2>
             }
+            <HandleNote noteHandler={noteHandler} />
+            <Footer/>
         </div>
     )
 }

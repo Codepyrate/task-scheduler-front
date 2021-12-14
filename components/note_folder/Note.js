@@ -1,19 +1,18 @@
 import React from "react"
 import Link from "next/link"
-import FormNote from "./FormNote"
 
 export default function Note(props) {
   console.log("Note page");
   console.log(props.sotreData, "Note page");
   return (
-    // mr-12
+    
     <main >
      
-      <div className="grid grid-cols-3 grid-rows-3 gap-4 ml-12 mr-12 mt-14">
+      <div className="grid grid-cols-3 grid-rows-3 gap-4 ml-12 mr-12">
         {props.sotreData?.map(function(item, key)  {
 
           return (
-            <div className="bg-yellow-100 shadow-lg">
+            <div className="mt-1 bg-yellow-100 shadow-lg">
               <h2 className="text-center break-normal">{item.note}</h2>
               <h2 className="break-normal">Day{item.day}</h2>
               <h2 className="break-normal">Time{item.time}</h2>
@@ -29,10 +28,10 @@ export default function Note(props) {
             </div>)
         })}
 
-        <div className="w-32 text-center border-2 border-indigo-600 border-dashed mt-28 ">
+        {/* <div className="w-32 text-center border-2 border-indigo-600 border-dashed mt-28 ">
           {/* <Link href="/"><a className="mb-9">Add New Note</a>
           </Link> */}
-        </div>
+        {/* </div> */} 
       </div>
 
     </main>
