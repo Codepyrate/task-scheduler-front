@@ -1,22 +1,35 @@
-import HandleNote from "../components/note_folder/HandleNote";
-import Note from "../components/note_folder/Note";
-import Header from "../components/Header"
+import HandleNote from '../components/note_folder/HandleNote'
+import Note from "../components/note_folder/Note"
+import {useState} from "react"
 import React from 'react'
-import LoginForm from "./LoginForm";
 
 export default function Main(props) {
-    console.log(props.sotreData, "main page");
+    const [sotreData, setStoreData] = useState([]);
+    console.log("sotreData test");
+   
+      function noteHandler(event) {
+          event.preventDefault();
+          const sotreData = {
+            note: event.target.t_note.value,
+            day: event.target.day.value,
+            time: event.target.time.value,
+            d_note: event.target.d_note.value
+          }
+          setStoreData(previous_props=>[...previous_props,sotreData])
+          console.log(sotreData);
+        //   console.log("sotreData");
+         
+      }
+    // console.log(props.sotreData, "main page");
    
     return (
         
         <div>
-            {/* <LoginForm/> */}
-            <Header/>
             {/* <Note sotreData={props.sotreData} /> */}
 
-            <HandleNote noteHandler={props.noteHandler} />
-            {props.sotreData ?
-                <Note sotreData={props.sotreData} />
+            <HandleNote noteHandler={noteHandler} />
+            {sotreData ?
+                <Note sotreData={sotreData} />
                 : <h2 className="text-center">noo</h2>
             }
         </div>

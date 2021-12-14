@@ -1,25 +1,16 @@
 import React from "react"
 import Link from "next/link"
 import FormNote from "./FormNote"
-import Header from "../Header";
 
 export default function Note(props) {
   console.log("Note page");
-  console.log(props, "Note page");
+  console.log(props.sotreData, "Note page");
   return (
     // mr-12
-    <>
-    <Header/>
     <main >
-      <div className=""></div>
-      <header className="grid grid-cols-3 p-2 mt-0 text-4xl text-center bg-slate-200 gap-x-20 ">
-        <p className="font-thin">Logo</p>
-        <p className="font-medium text-center ">Note Schdualer</p>
-        <p className="font-thin">Log out</p>
-
-      </header>
+     
       <div className="grid grid-cols-3 grid-rows-3 gap-4 ml-12 mr-12 mt-14">
-        {props.storeData.map((item, key) => {
+        {props.sotreData?.map(function(item, key)  {
 
           return (
             <div className="bg-yellow-100 shadow-lg">
@@ -45,8 +36,6 @@ export default function Note(props) {
       </div>
 
     </main>
-    </>
-    
   )
 }
 

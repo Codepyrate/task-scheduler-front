@@ -1,6 +1,6 @@
 import React from 'react'
-import { AiFillLinkedin, AiFillFacebook } from "react-icons/ai";
-
+import { AiFillLinkedin, AiFillFacebook,AiFillMail,AiFillTwitterSquare,AiOutlineInstagram } from "react-icons/ai";
+// import a
 // import Link from "next/link";
 
 
@@ -11,9 +11,20 @@ function Footer() {
 
 
                 <div class="grid grid-cols-7 gap-4 items-center m-7 text-white">
-                    <div >©Codepyrate| LTUC - ASAC</div>
-                    <div ><AiFillLinkedin /></div>
-                    <div ><AiFillFacebook /></div>
+                    <a >©Codepyrate| LTUC - ASAC</a>
+                    <a className="ml-12">Contact us</a>
+                    <a className="">Contact Support</a>
+                    <a className="">Home</a>
+                    
+                    {/* <div className="gap-2 ml-1">test<p><AiFillLinkedin /></p></div> */}
+
+                    <div class="grid grid-cols-7 m-7 text-white text-lg ml-2 ">        
+                    <a className="" ><AiFillLinkedin /></a>
+                    <a className="ml-0 mr-9"><AiFillFacebook /></a>
+                    <a className=""> <AiFillMail/></a>
+                    <a className=""> <AiFillTwitterSquare/></a>
+                    <a className=""> <AiOutlineInstagram/></a>
+                    </div>
 
                 </div>
                
