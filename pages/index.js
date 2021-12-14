@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import StartApp from './StartApp'
+import Header from '../components/Header'
+
 
 
 
@@ -10,9 +11,8 @@ export default function Home() {
         <title>Task Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      
-       <StartApp/>
+    <Header/>
+     
 
      
     

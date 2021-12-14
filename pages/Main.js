@@ -1,6 +1,6 @@
-import HandleNote from "./HandleNote";
-import Note from "./Note";
-
+import HandleNote from "../components/note_folder/HandleNote";
+import Note from "../components/note_folder/Note";
+import Header from "../components/Header"
 import React from 'react'
 
 export default function Main(props) {
@@ -9,6 +9,7 @@ export default function Main(props) {
     return (
         
         <div>
+            <Header/>
             {/* <Note sotreData={props.sotreData} /> */}
 
             <HandleNote noteHandler={props.noteHandler} />

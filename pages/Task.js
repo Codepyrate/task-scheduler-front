@@ -1,9 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { nanoid } from "nanoid";
 import data from "../static-data.json";
-import ReadTask from "./ReadTask";
-import EditTask from "./EditTask";
-
+import ReadTask from "../components/Task/ReadTask";
+import EditTask from "../components/Task/EditTask";
+import Header from '../components/Header'
 const App = () => {
   const [tasks, setTasks] = useState(data);
   const [addFormData, setAddFormData] = useState({
@@ -106,9 +106,11 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <div>
+      <Header/>
+      <div className="app-container">
         <h1 id="heading">Task Manager</h1>
-      <form onSubmit={handleEditFormSubmit}>
+      <form className="task-form" onSubmit={handleEditFormSubmit}>
         <table>
           <thead>
             <tr>
@@ -141,7 +143,7 @@ const App = () => {
       </form>
 
       <h1>Add a new Task</h1>
-      <form onSubmit={handleAddFormSubmit}>
+      <form className="task-form" onSubmit={handleAddFormSubmit}>
         <input
           type="text"
           name="TaskTitle"
@@ -166,6 +168,11 @@ const App = () => {
         <button type="submit" className="text-black bg-green-600 rounded-lg hover:bg-green-700">Add Task</button>
       </form>
     </div>
+
+
+
+    </div>
+    
   );
 };
 

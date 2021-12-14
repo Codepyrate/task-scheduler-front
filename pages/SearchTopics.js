@@ -1,9 +1,11 @@
 import React from 'react'
-import 'tailwindcss/tailwind.css'
-
+// import 'tailwindcss/tailwind.css'
+import Header from '../components/Header'
 function Search_topics() {
 
     return (
+        <>
+        <Header/>
         <div className="bg-slate-100 w-11/12 border-2  m-auto drop-shadow-md border-gray-100    bg-cover ">
             <div className="w-80  mt-6   grid grid-cols-3 gap-96 border-x-0 " >
                 <div className="w-80  mt-6 mr-10 ml-10  grid grid-rows-6 grid-flow-col gap-4  ">
@@ -34,6 +36,10 @@ function Search_topics() {
             
         </div>
 
+        
+        
+        </>
+        
     )
 }
 

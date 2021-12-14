@@ -1,7 +1,6 @@
 import {useState} from "react"
-import Footer from "./Footer" 
-import Header from "./Header"
-import Main from "./Main";
+
+
 export default function FormNote() {
     const [sotreData, setStoreData] = useState("");
     console.log("sotreData test");
@@ -23,7 +22,7 @@ export default function FormNote() {
         <div  >
             <Header/>
 
-            <Main sotreData={sotreData} noteHandler={noteHandler} />
+            {/* <Main sotreData={sotreData} noteHandler={noteHandler} /> */}
             <Footer/>
         </div>
     )

@@ -31,16 +31,16 @@
     background-color: lightgray;
   }
   
-  form {
+  .task-form {
     display: flex;
     gap: 5px;
   }
   
-  form td:last-child {
+  .task-form td:last-child {
     display: flex;
     justify-content: space-evenly;
   }
   
-  form * {
+  .task-form * {
     font-size: 28px;
   }
