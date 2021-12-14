@@ -3,7 +3,7 @@ export default function HandleNote(props) {
 
     return (
         <div  >
-            <form onSubmit={props.noteHandler} className='flex-col justify-center w-10/12 p-2 mx-auto mt-24 rounded-md shadow-2xl bg-zinc-400'>
+            <form onSubmit={props.noteHandler} className='p-2 mx-auto mt-24 rounded-md shadow-2xl w-36 bg-zinc-400'>
                 <h1 className="my-4 text-4xl font-bold text-center ">
                     New Note  </h1>
                 <div className="break-normal texter-center ">
