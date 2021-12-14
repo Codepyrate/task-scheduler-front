@@ -1,18 +1,28 @@
 import React from 'react'
+import { AiFillLinkedin, AiFillFacebook } from "react-icons/ai";
+
+// import Link from "next/link";
 
 
 function Footer() {
     return (
-        <div className="bg-gray-400 w-full h-10 grid grid-cols-3 gap-44 content-center" >
-            <footer className="flex flex-col">
-                <div className="flex flex-center">
-                    <p>©Codepyrate| LTUC - ASAC  </p>
-                    <a href="#" class="fa fa-facebook"><img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7kEMcBn4u84Of1MXpGEgWd2CM5vBkjnei2Q&usqp=CAU" className="w-9 h-9 rounded"/> </a>
+        <div className="" >
+            <footer className="h-16 mt-56 bg-teal-700 ring-4 ring-teal-300 ring-inset">
+
+
+                <div class="grid grid-cols-7 gap-4 items-center m-7 text-white">
+                    <div >©Codepyrate| LTUC - ASAC</div>
+                    <div ><AiFillLinkedin /></div>
+                    <div ><AiFillFacebook /></div>
+
                 </div>
-                
+               
+
+
+
             </footer>
-            
-            
+
+
 
         </div>
     )
