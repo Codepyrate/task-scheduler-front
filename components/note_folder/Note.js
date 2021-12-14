@@ -1,12 +1,15 @@
 import React from "react"
 import Link from "next/link"
 import FormNote from "./FormNote"
+import Header from "../Header";
 
 export default function Note(props) {
   console.log("Note page");
   console.log(props, "Note page");
   return (
     // mr-12
+    <>
+    <Header/>
     <main >
       <div className=""></div>
       <header className="grid grid-cols-3 p-2 mt-0 text-4xl text-center bg-slate-200 gap-x-20 ">
@@ -42,6 +45,8 @@ export default function Note(props) {
       </div>
 
     </main>
+    </>
+    
   )
 }
 
