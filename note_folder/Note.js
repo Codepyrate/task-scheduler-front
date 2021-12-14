@@ -4,7 +4,7 @@ import FormNote from "./FormNote"
 
 export default function Note(props) {
   console.log("Note page");
-  console.log(props, "Note page");
+  console.log(props.sotreData, "Note page");
   return (
     // mr-12
     <main >
@@ -16,7 +16,7 @@ export default function Note(props) {
 
       </header>
       <div className="grid grid-cols-3 grid-rows-3 gap-4 ml-12 mr-12 mt-14">
-        {props.storeData.map((item, key) => {
+        {props.sotreData?.map(function(item, key)  {
 
           return (
             <div className="bg-yellow-100 shadow-lg">
