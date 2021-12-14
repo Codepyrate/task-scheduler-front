@@ -2,6 +2,7 @@ import HandleNote from "../components/note_folder/HandleNote";
 import Note from "../components/note_folder/Note";
 import Header from "../components/Header"
 import React from 'react'
+import LoginForm from "./LoginForm";
 
 export default function Main(props) {
     console.log(props.sotreData, "main page");
@@ -9,6 +10,7 @@ export default function Main(props) {
     return (
         
         <div>
+            {/* <LoginForm/> */}
             <Header/>
             {/* <Note sotreData={props.sotreData} /> */}
 
