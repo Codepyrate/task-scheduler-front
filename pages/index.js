@@ -7,7 +7,8 @@ import { useAuth } from '../contexts/auth'
 import Login from './Login'
 import Task from './Task'
 export default function Home() {
-  const { user } = useAuth()
+  const { user, login } = useAuth()
+
   console.log(user, "user index");
   return (
     <>
@@ -17,12 +18,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      
-      {/* {user ? (
+      {user ? (
 
         <Task />
       ) : (
-        <Login />
-      )} */}
+        <Login login={login} />
+      )}
       
       <Footer />
 

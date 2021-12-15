@@ -4,8 +4,8 @@ import { MdLockOutline } from 'react-icons/md'
 import Header from '../components/Header'
 import { useAuth } from '../contexts/auth'
 import Link from 'next/link'
-export default function Login() {
-  const { user, login } = useAuth()
+export default function Login({login}) {
+  // const { user, login } = useAuth()
 
   let onCreate = (e) => {
     e.preventDefault()
@@ -23,10 +23,7 @@ export default function Login() {
 
       <div className="flex flex-col items-center justify-around h-full bg-gray-200 p-14">
         <main className="flex flex-col items-center flex-1 w-full px-20 text-center">
-          {user ? (
-
-            <Task />
-          ) : (
+       
             <form onSubmit={e => onCreate(e)} className='' >
               <div className="flex w-2/3 max-w-4xl bg-white shadow-2xl ml-90 rounded-2xl">
                 <div className="w-3/5 p-5">
@@ -68,7 +65,7 @@ export default function Login() {
                 {/*Sign up */}
               </div>
             </form>
-          )}
+         
 
         </main>
       </div>
