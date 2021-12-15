@@ -1,10 +1,7 @@
-import React from 'react'
-<<<<<<< HEAD:components/Search_topics/SearchTopics.js
-import 'tailwindcss/tailwind.css'
+import React from 'react' 
 import axios from 'axios'
-
 import { useState, useEffect } from 'react'
-
+import Header from '../components/Header'
 
  function Search_topics () {
     const [input , setInput]= useState([])
@@ -18,13 +15,6 @@ import { useState, useEffect } from 'react'
            console.log(response.data)
        })
    }
-
-=======
-// import 'tailwindcss/tailwind.css'
-import Header from '../components/Header'
-function Search_topics() {
->>>>>>> develop:pages/SearchTopics.js
-
     return (
         <>
         <Header/>
