@@ -1,14 +1,11 @@
 import React from 'react' 
 import axios from 'axios'
-import { useState, useEffect } from 'react'
 import Header from '../components/Header'
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+
 
 
 function Search_topics() {
-
 
     let results = []
     let related_Q = []
@@ -37,21 +34,8 @@ function Search_topics() {
 
 
 
-=======
-
- function Search_topics () {
-    const [input , setInput]= useState([])
-    const [device , setdevice]= useState([])
-  
 
 
-   const handleinput = ()=>{
-       console.log(input)
-       axios.get('http://127.0.0.1:8000/' , input).then(response=>{
-           console.log(response.data)
-       })
-   }
->>>>>>> develop
     return (
         <>
             <Header />
@@ -62,7 +46,7 @@ function Search_topics() {
                         <img alt="image" src="https://media.istockphoto.com/photos/flipping-of-wooden-cube-block-for-change-2021-to-2022-year-for-merry-picture-id1306669120?b=1&k=20&m=1306669120&s=170667a&w=0&h=OPcBy2EUkv2R5AV54XJqNniU2wNh2DI_dSZEcgDW6A0=" className="w-full relative h-50 ease-in-out" />
                         <img alt="image" src="https://media.istockphoto.com/photos/asian-lady-typing-laptop-calendar-cafe-concept-picture-id598084402?b=1&k=20&m=598084402&s=170667a&w=0&h=ZH5ueGA9SOl-aVzUXiKKGQXbfzYLTcBEaZ31d_EsdEU=" className="w-full relative h-50 ease-in-out" className="w-full relative h-50 ease-in-out " />
 
-<<<<<<< HEAD
+
                     </div>
                     <div className="bg-teal-400 w-full h-full float-right"
                     >
@@ -120,7 +104,7 @@ function Search_topics() {
                             </div>
 
                         </div>
-=======
+
                 </div>
                 <div className="bg-teal-400 w-full h-full float-right"
                 >
@@ -131,7 +115,6 @@ function Search_topics() {
                         </div>
 
 
->>>>>>> develop
                     </div>
 
                     <div className="w-80  mt-6 ml-64 grid grid-rows-6 grid-flow-col gap-4  ">
@@ -144,11 +127,10 @@ function Search_topics() {
                 </div>
 
             </div>
-<<<<<<< HEAD
-=======
+
 
         </div>
->>>>>>> develop
+
 
 
 
