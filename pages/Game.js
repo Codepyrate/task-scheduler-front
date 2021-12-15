@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { calculateWinner } from "./helper";
-import Board from "./Board";
+import { calculateWinner } from "../components/ticTacToe/helper";
+import Board from "../components/ticTacToe/Board";
+import Header from "../components/Header";
 
 const Game = () => {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -38,7 +39,9 @@ const Game = () => {
     });
 
   return (
-    <div className="body">
+  <div className="flex flex-col">
+  <Header/>
+  <div className="body">
        <h2 className=" text-center ">
         Tic tac toe
       </h2>
@@ -51,6 +54,8 @@ const Game = () => {
         <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
       </div>
     </div>
+  </div>
+    
   );
 };
 
