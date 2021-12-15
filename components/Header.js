@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import dateTime from "date-time";
 import Link from "next/link";
+import Login from "../pages/Login";
+
+
 function Header() {
   return (
     <nav className="flex items-center justify-between  flex-wrap bg-teal-700 ... ring-4 ring-teal-300 ring-inset p-6">
@@ -23,7 +26,8 @@ function Header() {
       </div>
 
       {/* main nav*/}
-      <div className="flex gap-8 text-2xl">
+      
+        <div className="flex gap-8 text-2xl">
         <Link href="/Task">
           <a className="text-teal-200 hover:text-white ">Task</a>
         </Link>
@@ -39,20 +43,20 @@ function Header() {
           <a className="text-teal-200 hover:text-white">Entertainment</a>
         </Link>
       </div>
-      {/*login and sign in*/}
-      <div>
-        <Link href="/Login">
-          <a className="inline-block px-4 py-2 mt-4 ml-16 text-lg leading-none text-center text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0">
-            Log In
-          </a>
-        </Link>
- 
-        <Link href='/Signup'>
+        {/*login and sign in*/}
+    <div>
+      <Link href="/Login">
         <a className="inline-block px-4 py-2 mt-4 ml-16 text-lg leading-none text-center text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0">
-          Sign Up
+          Log In
         </a>
-        </Link>
-      </div>
+      </Link>
+
+      <Link href='/Signup'>
+      <a className="inline-block px-4 py-2 mt-4 ml-16 text-lg leading-none text-center text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0">
+        Sign Up
+      </a>
+      </Link>
+    </div>
     </nav>
   );
 }
