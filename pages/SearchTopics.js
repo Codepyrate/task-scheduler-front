@@ -1,8 +1,20 @@
-import React from 'react'
-// import 'tailwindcss/tailwind.css'
+import React from 'react' 
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
-function Search_topics() {
 
+ function Search_topics () {
+    const [input , setInput]= useState([])
+    const [device , setdevice]= useState([])
+  
+
+
+   const handleinput = ()=>{
+       console.log(input)
+       axios.get('http://127.0.0.1:8000/' , input).then(response=>{
+           console.log(response.data)
+       })
+   }
     return (
         <>
         <Header/>
@@ -18,9 +30,10 @@ function Search_topics() {
                 >
                     <div className="container  grid ml-72 mt-12 justify-center items-center">
                         <div className="relative">
-                            <div className="absolute top-4 left-3 "> <i className="fa  fa-search text-gray-500  hover:text-gray-800"></i> </div> <input type="text" className="h-14 w-96 pl-10 pr-20  rounded-lg z-0 focus:shadow focus:outline-none border-gray-300" placeholder=" Search anything..." />
-                            <div className="absolute top-2 right-2"> <button className="h-10 w-20 text-white rounded-lg bg-teal-500 hover:bg-gray-400">Search 🔍</button> </div>
+                            <div className="absolute top-4 left-3 "> <i className="fa  fa-search text-gray-500  hover:text-gray-800"></i> </div> <input type="text" onChange={e => { setInput(e.target.value) }} name="input" className="h-14 w-96 pl-10 pr-20  rounded-lg z-0 focus:shadow focus:outline-none border-gray-300" placeholder=" Search anything..." />
+                            <div className="absolute top-2 right-2"> <button className="h-10 w-20 text-white rounded-lg bg-teal-500 hover:bg-gray-400" onClick={() => handleinput()}>Search 🔍</button> </div>
                         </div>
+
 
                     </div>
                 </div>
@@ -33,7 +46,7 @@ function Search_topics() {
                 </div>
 
             </div>
-            
+
         </div>
 
         
