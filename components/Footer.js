@@ -1,18 +1,39 @@
 import React from 'react'
+import { AiFillLinkedin, AiFillFacebook,AiFillMail,AiFillTwitterSquare,AiOutlineInstagram } from "react-icons/ai";
+// import a
+// import Link from "next/link";
 
 
 function Footer() {
     return (
-        <div className="bg-gray-400 w-full h-10 grid grid-cols-3 gap-44 content-center" >
-            <footer className="flex flex-col">
-                <div className="flex flex-center">
-                    <p>©Codepyrate| LTUC - ASAC  </p>
-                    <a href="#" class="fa fa-facebook"><img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7kEMcBn4u84Of1MXpGEgWd2CM5vBkjnei2Q&usqp=CAU" className="w-9 h-9 rounded"/> </a>
+        <div className="" >
+            <footer className="h-16 mt-56 bg-teal-700 ring-4 ring-teal-300 ring-inset">
+
+
+                <div class="grid grid-cols-7 gap-4 items-center m-7 text-white">
+                    <a >©Codepyrate| LTUC - ASAC</a>
+                    <a className="ml-12">Contact us</a>
+                    <a className="">Contact Support</a>
+                    {/* <a className="">Home</a> */}
+                    
+                    {/* <div className="gap-2 ml-1">test<p><AiFillLinkedin /></p></div> */}
+
+                    <div class="grid grid-cols-7 m-7 text-white text-lg ml-2 ">        
+                    <a className="" ><AiFillLinkedin /></a>
+                    <a className="ml-0 mr-9"><AiFillFacebook /></a>
+                    <a className=""> <AiFillMail/></a>
+                    <a className=""> <AiFillTwitterSquare/></a>
+                    <a className=""> <AiOutlineInstagram/></a>
+                    </div>
+
                 </div>
-                
+               
+
+
+
             </footer>
-            
-            
+
+
 
         </div>
     )
