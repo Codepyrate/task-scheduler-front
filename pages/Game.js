@@ -30,32 +30,35 @@ const Game = () => {
     history.map((_step, move) => {
       const destination = move ? `Go to move #${move}` : "Go to Start";
       return (
-        
+
         <li className=" list-none" key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
         </li>
-        
+
       );
     });
 
   return (
-  <div className="flex flex-col">
-  <Header/>
-  <div className="body">
-       <h2 className=" text-center ">
-        Tic tac toe
-      </h2>
-      <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div className="info-wrapper">
-        <div>
-          <h3>History</h3>
-          {renderMoves()}
+    <>
+      <Header />
+      <div className=" body flex flex-col grid-cols-2">
+        <h2  className=" text-center text-7xl italic  font-serif antialiased md:subpixel-antialiased mt-5 m-auto text-teal-600">
+          Tic tac toe
+        </h2>
+        <h3 className="text-xxl text-gray-600" id="winner">{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
+
+        <div className=" flex flex-cols-1 ">
+          <Board squares={history[stepNumber]} onClick={handleClick} />
+
+          <div className="flex flex-cols-2 text-justify text-lg ml-8">
+            <h3 className="info-wrapper text-xl text-teal-600">History:</h3>
+            <h3 className="pl-6 text-lg">{renderMoves()}</h3>
+
+          </div>
         </div>
-        <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
       </div>
-    </div>
-  </div>
-    
+
+    </>
   );
 };
 

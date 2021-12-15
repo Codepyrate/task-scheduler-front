@@ -108,14 +108,7 @@ function Search_topics() {
                 </div>
                 <div className="bg-teal-400 w-full h-full float-right"
                 >
-                    <div className="container  grid ml-72 mt-12 justify-center items-center">
-                        <div className="relative">
-                            <div className="absolute top-4 left-3 "> <i className="fa  fa-search text-gray-500  hover:text-gray-800"></i> </div> <input type="text" onChange={e => { setInput(e.target.value) }} name="input" className="h-14 w-96 pl-10 pr-20  rounded-lg z-0 focus:shadow focus:outline-none border-gray-300" placeholder=" Search anything..." />
-                            <div className="absolute top-2 right-2"> <button className="h-10 w-20 text-white rounded-lg bg-teal-500 hover:bg-gray-400" onClick={() => handleinput()}>Search 🔍</button> </div>
-                        </div>
-
-
-                    </div>
+                    
 
                     <div className="w-80  mt-6 ml-64 grid grid-rows-6 grid-flow-col gap-4  ">
                         <img alt="image" src="https://media.istockphoto.com/photos/goal-plan-action-text-on-note-pad-picture-id1284696245?b=1&k=20&m=1284696245&s=170667a&w=0&h=C5x9jqbc3oKHdmB52tBv-BKdYnLBaL-NH5gw9_pdSGc=" />
