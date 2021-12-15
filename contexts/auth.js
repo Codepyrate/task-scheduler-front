@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState,useEffect } from 'react';
 import jwt from 'jsonwebtoken';
 import axios from 'axios'
 const baseUrl = process.env.NEXT_PUBLIC_AUTH_URL;
@@ -18,7 +18,24 @@ export function AuthProvider(props) {
         login,
         logout,
     });
-
+useEffect(()=>{
+    const save_auth=JSON.parse(localStorage.getItem("userAuth"))
+    
+    if (save_auth){
+        const decodedAccess = jwt.decode(save_auth.access);
+        const newState = {
+            tokens: save_auth.access,
+            user: {
+                username: decodedAccess.username,
+                email: decodedAccess.email,
+                id: decodedAccess.user_id
+            },
+        }
+        console.log(save_auth);
+        setState(prevState => ({ ...prevState, ...newState }));
+            }
+        },[])
+        
     async function login(username, password) {
         console.log(tokenUrl);    
         const response = await axios.post(tokenUrl, { username, password });
@@ -33,13 +50,14 @@ export function AuthProvider(props) {
                 id: decodedAccess.user_id
             },
         }
-        localStorage.setItem("userAuth",JSON.stringify(newState))
+        localStorage.setItem("userAuth",JSON.stringify(response.data))
         console.log(newState,"Auth login");
 
         setState(prevState => ({ ...prevState, ...newState }));
     }
 
     function logout() {
+        localStorage.clear
         const newState = {
             tokens: null,
             user: null,
