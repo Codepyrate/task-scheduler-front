@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from 'react';
 import jwt from 'jsonwebtoken';
 import axios from 'axios'
 const tokenUrl = process.env.NEXT_PUBLIC_AUTH_URL;
+
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -20,12 +21,11 @@ export function AuthProvider(props) {
     });
 
     async function login(username, password) {
-        
-        const response = await axios.post('https://live-cookie-snack.herokuapp.com/api/token/', { username, password });
+
+        const response = await axios.post(tokenUrl, { username, password });
 
         const decodedAccess = jwt.decode(response.data.access);
 
-        console.log(response.data)
         const newState = {
             tokens: response.data,
             user: {

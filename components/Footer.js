@@ -14,7 +14,7 @@ function Footer() {
                     <a >©Codepyrate| LTUC - ASAC</a>
                     <a className="ml-12">Contact us</a>
                     <a className="">Contact Support</a>
-                    <a className="">Home</a>
+                    {/* <a className="">Home</a> */}
                     
                     {/* <div className="gap-2 ml-1">test<p><AiFillLinkedin /></p></div> */}
 
