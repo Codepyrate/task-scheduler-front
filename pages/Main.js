@@ -4,7 +4,7 @@ import Header from "../components/Header"
 import React from 'react'
 
 export default function Main(props) {
-    console.log(props.sotreData, "main page");
+    
    
     return (
         
