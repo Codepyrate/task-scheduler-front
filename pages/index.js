@@ -1,18 +1,34 @@
 import Head from 'next/head'
-import FormNote from '../note_folder/FormNote'
-import Note from '../note_folder/Note'
-
+import Header from '../components/Header'
+import { AuthProvider } from '../contexts/auth'
+import Footer from '../components/Footer'
+// import Login from './Login'
+import { useAuth } from '../contexts/auth'
+import Login from './Login'
+import Task from './Task'
 export default function Home() {
+  const { user } = useAuth()
+  console.log(user, "user index");
   return (
-    // className="flex flex-col items-center justify-center min-h-screen py-2"
-    <div >
+    <>
       <Head>
-        <title>Create Next App</title>
+
+        <title>Task Scheduler</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+     
+      {/* {user ? (
 
-      {/* <Note/> */}
-      <FormNote/>
-    </div>
+        <Task />
+      ) : (
+        <Login />
+      )} */}
+      
+      <Footer />
+
+
+
+    </>
+
   )
 }
