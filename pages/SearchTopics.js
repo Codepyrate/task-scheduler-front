@@ -1,6 +1,8 @@
-import React from 'react'
-// import 'tailwindcss/tailwind.css'
+import React from 'react' 
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
+<<<<<<< HEAD
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -35,6 +37,21 @@ function Search_topics() {
 
 
 
+=======
+
+ function Search_topics () {
+    const [input , setInput]= useState([])
+    const [device , setdevice]= useState([])
+  
+
+
+   const handleinput = ()=>{
+       console.log(input)
+       axios.get('http://127.0.0.1:8000/' , input).then(response=>{
+           console.log(response.data)
+       })
+   }
+>>>>>>> develop
     return (
         <>
             <Header />
@@ -45,6 +62,7 @@ function Search_topics() {
                         <img alt="image" src="https://media.istockphoto.com/photos/flipping-of-wooden-cube-block-for-change-2021-to-2022-year-for-merry-picture-id1306669120?b=1&k=20&m=1306669120&s=170667a&w=0&h=OPcBy2EUkv2R5AV54XJqNniU2wNh2DI_dSZEcgDW6A0=" className="w-full relative h-50 ease-in-out" />
                         <img alt="image" src="https://media.istockphoto.com/photos/asian-lady-typing-laptop-calendar-cafe-concept-picture-id598084402?b=1&k=20&m=598084402&s=170667a&w=0&h=ZH5ueGA9SOl-aVzUXiKKGQXbfzYLTcBEaZ31d_EsdEU=" className="w-full relative h-50 ease-in-out" className="w-full relative h-50 ease-in-out " />
 
+<<<<<<< HEAD
                     </div>
                     <div className="bg-teal-400 w-full h-full float-right"
                     >
@@ -102,6 +120,18 @@ function Search_topics() {
                             </div>
 
                         </div>
+=======
+                </div>
+                <div className="bg-teal-400 w-full h-full float-right"
+                >
+                    <div className="container  grid ml-72 mt-12 justify-center items-center">
+                        <div className="relative">
+                            <div className="absolute top-4 left-3 "> <i className="fa  fa-search text-gray-500  hover:text-gray-800"></i> </div> <input type="text" onChange={e => { setInput(e.target.value) }} name="input" className="h-14 w-96 pl-10 pr-20  rounded-lg z-0 focus:shadow focus:outline-none border-gray-300" placeholder=" Search anything..." />
+                            <div className="absolute top-2 right-2"> <button className="h-10 w-20 text-white rounded-lg bg-teal-500 hover:bg-gray-400" onClick={() => handleinput()}>Search 🔍</button> </div>
+                        </div>
+
+
+>>>>>>> develop
                     </div>
 
                     <div className="w-80  mt-6 ml-64 grid grid-rows-6 grid-flow-col gap-4  ">
@@ -114,6 +144,11 @@ function Search_topics() {
                 </div>
 
             </div>
+<<<<<<< HEAD
+=======
+
+        </div>
+>>>>>>> develop
 
 
 
