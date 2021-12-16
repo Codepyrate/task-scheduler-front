@@ -6,6 +6,7 @@ import data from "../static-data2.json";
 import ReadNote from "../components/note_folder/ReadNote";
 import EditNote from "../components/note_folder/EditNote";
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 const App = () => {
   const [tasks, setTasks] = useState(data);
   const [addFormData, setAddFormData] = useState({
@@ -107,84 +108,101 @@ const App = () => {
     setTasks(newTasks);
   };
 
-  const handleendpoint = ()=>{
+  const handleendpoint = () => {
     console.log(input)
-    axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response=>{
-        console.log(response.data)
-        return response
+    axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response => {
+      console.log(response.data)
+      return response
     })
-}
-// test
+  }
+  // test
 
 
   return (
-    <div>
-      <Header/>
-      <div className="app-container">
-        <h1 id="heading">Note Manager</h1>
-      <form className="task-form" onSubmit={handleEditFormSubmit}>
-        <table>
-          <thead>
-            <tr>
-              <th>Note title</th>
-              <th>Description</th>
-              <th>Time</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tasks.map((task) => (
-              <Fragment>
-                {editTaskId === task.id ? (
-                  <EditNote
-                    editFormData={editFormData}
-                    handleEditFormChange={handleEditFormChange}
-                    handleCancelClick={handleCancelClick}
-                  />
-                ) : (
-                  <ReadNote
-                    task={task}
-                    handleEditClick={handleEditClick}
-                    handleDeleteClick={handleDeleteClick}
-                  />
-                )}
-              </Fragment>
-            ))}
-          </tbody>
-        </table>
-      </form>
-
-      <h1>Add a new Note</h1>
-      <form className="task-form" onSubmit={handleAddFormSubmit}>
-        <input
-          type="text"
-          name="TaskTitle"
-          required="required"
-          placeholder="Enter Note title..."
-          onChange={handleAddFormChange}
-        />
-        <input
-          type="text"
-          name="Description"
-          required="required"
-          placeholder="Add a description..."
-          onChange={handleAddFormChange}
-        />
-        <input
-          type="time"
-          name="TaskTime"
-          required="required"
-          placeholder="Add Node..."
-          onChange={handleAddFormChange}
-        />
-        <button type="submit" className="text-black bg-green-600 rounded-lg hover:bg-green-700">Add Note</button>
-      </form>
-    </div>
+    <>
+      <Header />
+      <div className=" bg-gray-200 h-full ml-12 mr-12 mb-12 bg-[url('https://cdn.pixabay.com/photo/2015/05/31/11/28/tech-791191__340.jpg')] bg-cover bg-opacity-50" >
 
 
+        <h2 className=" text-center text-6xl italic  font-serif antialiased md:subpixel-antialiased mt-5 text-black">Note Manager</h2>
+        <form className="task-form" onSubmit={handleEditFormSubmit}>
+          <table className="table-auto mt-10 mr-20 ml-20 rounded md:border-collapse">
+            <thead className="font-serif text-lg  text-gray-100 ">
+              <tr className="ml-6 ">
+                <th>Note title</th>
+                <th>Description</th>
+                <th>Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody className=" text-xs text-teal-600">
+              {tasks.map((task) => (
+                <Fragment>
+                  {editTaskId === task.id ? (
+                    <EditNote
+                      editFormData={editFormData}
+                      handleEditFormChange={handleEditFormChange}
+                      handleCancelClick={handleCancelClick}
+                    />
+                  ) : (
+                    <ReadNote
+                      task={task}
+                      handleEditClick={handleEditClick}
+                      handleDeleteClick={handleDeleteClick}
+                    />
+                  )}
+                </Fragment>
+              ))}
+            </tbody>
+          </table>
+        </form>
 
-    </div>
-    
+        <h1 className="text-3xl text-white itilic pt-12 pb-4 font-serif antialiased md:subpixel-antialiased mt-5 text-bold"> 📝Add a new Note 📝</h1>
+
+
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0  grid  ">
+          <form className="task-form" onSubmit={handleAddFormSubmit}>
+            <input
+              className="appearance-none block w-full bg-white text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"
+              type="text"
+              name="TaskTitle"
+              required="required"
+              placeholder="Enter Note title..."
+              onChange={handleAddFormChange}
+            />
+            <input
+              className="appearance-none block w-full bg-white-300 text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"
+              type="text"
+              name="Description"
+              required="required"
+              placeholder="Add a description..."
+              onChange={handleAddFormChange}
+            />
+            <input
+              className="appearance-none block w-full bg-white text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"
+              type="time"
+              name="TaskTime"
+              required="required"
+              placeholder="Add Node..."
+              onChange={handleAddFormChange}
+            />
+
+            <button type="submit" className="bg-teal-600 ml-10 hover:bg-teal-200 text-white font-bold py-2 px-3 rounded-full" >
+              ADD
+            </button>
+          </form>
+          
+        
+
+
+        </div>
+
+
+        <Footer />
+
+      </div>
+      
+    </>
   );
 };
 

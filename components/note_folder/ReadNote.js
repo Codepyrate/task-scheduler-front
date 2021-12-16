@@ -9,12 +9,12 @@ const ReadNode = ({ task, handleEditClick, handleDeleteClick }) => {
       <td>
         <button
           type="button"
-          className="text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+          className="text-bold    text-white font-bold py-2 px-3 rounded-full bg-teal-300"
           onClick={(event) => handleEditClick(event, task)}
         >
           Edit
         </button>
-        <button type="button" className="text-white bg-red-600 rounded-lg hover:bg-red-700" onClick={() => handleDeleteClick(task.id)}>
+        <button type="button" className="text-bold   bg-red-300 ml-10  text-white font-bold py-2 px-3 rounded-full" onClick={() => handleDeleteClick(task.id)}>
           Delete
         </button>
       </td>
