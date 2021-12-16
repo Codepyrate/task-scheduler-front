@@ -4,10 +4,18 @@ import data from "../static-data2.json";
 // import ReadTask from "../components/Task/ReadTask";
 // import EditTask from "../components/Task/EditTask";
 import ReadNote from "../components/note_folder/ReadNote";
-import EditNote from "../components/note_folder/EditNote";
+// import EditNote from "../components/note_folder/EditNote";
 import Header from '../components/Header'
-const App = () => {
+import axios from "axios";
+
+
+
+export default function Note(props) {
+  console.log(props.user);
   const [tasks, setTasks] = useState(data);
+  const [dataNotes, setDataNotes] = useState([])
+ 
+
   const [addFormData, setAddFormData] = useState({
     TaskTitle: "",
     Description: "",
@@ -107,85 +115,83 @@ const App = () => {
     setTasks(newTasks);
   };
 
-  const handleendpoint = ()=>{
-    console.log(input)
-    axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response=>{
-        console.log(response.data)
-        return response
-    })
+  
+
+  axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response=>{
+    console.log(response.data);})
+ 
+      
+
+    return (
+      <div>
+        <Header/>
+        <div className="app-container">
+          <h1 id="heading">Note Manager</h1>
+        <form className="task-form" onSubmit={handleEditFormSubmit}>
+          <table>
+            <thead>
+              <tr>
+                <th>Note title</th>
+                <th>Description</th>
+                <th>Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tasks.map((task , index) => (
+                <Fragment key="index">
+                  {editTaskId === task.id ? (
+                    <EditNote key="index"
+                      editFormData={editFormData}
+                      handleEditFormChange={handleEditFormChange}
+                      handleCancelClick={handleCancelClick}
+                    />
+                  ) : (
+                    <ReadNote key="index"
+                      task={task}
+                      handleEditClick={handleEditClick}
+                      handleDeleteClick={handleDeleteClick}
+                    />
+                  )}
+                </Fragment>
+              ))}
+            </tbody>
+          </table>
+        </form>
+  
+        <h1>Add a new Note</h1>
+        <form className="task-form" onSubmit={handleAddFormSubmit}>
+          <input
+            type="text"
+            name="TaskTitle"
+            required="required"
+            placeholder="Enter Note title..."
+            onChange={handleAddFormChange}
+          />
+          <input
+            type="text"
+            name="Description"
+            required="required"
+            placeholder="Add a description..."
+            onChange={handleAddFormChange}
+          />
+          <input
+            type="time"
+            name="TaskTime"
+            required="required"
+            placeholder="Add Node..."
+            onChange={handleAddFormChange}
+          />
+          <button type="submit" className="text-black bg-green-600 rounded-lg hover:bg-green-700">Add Note</button>
+        </form>
+      </div>
+  
+  
+  
+      </div>
+  )
 }
-// test
-
-
-  return (
-    <div>
-      <Header/>
-      <div className="app-container">
-        <h1 id="heading">Note Manager</h1>
-      <form className="task-form" onSubmit={handleEditFormSubmit}>
-        <table>
-          <thead>
-            <tr>
-              <th>Note title</th>
-              <th>Description</th>
-              <th>Time</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tasks.map((task) => (
-              <Fragment>
-                {editTaskId === task.id ? (
-                  <EditNote
-                    editFormData={editFormData}
-                    handleEditFormChange={handleEditFormChange}
-                    handleCancelClick={handleCancelClick}
-                  />
-                ) : (
-                  <ReadNote
-                    task={task}
-                    handleEditClick={handleEditClick}
-                    handleDeleteClick={handleDeleteClick}
-                  />
-                )}
-              </Fragment>
-            ))}
-          </tbody>
-        </table>
-      </form>
-
-      <h1>Add a new Note</h1>
-      <form className="task-form" onSubmit={handleAddFormSubmit}>
-        <input
-          type="text"
-          name="TaskTitle"
-          required="required"
-          placeholder="Enter Note title..."
-          onChange={handleAddFormChange}
-        />
-        <input
-          type="text"
-          name="Description"
-          required="required"
-          placeholder="Add a description..."
-          onChange={handleAddFormChange}
-        />
-        <input
-          type="time"
-          name="TaskTime"
-          required="required"
-          placeholder="Add Node..."
-          onChange={handleAddFormChange}
-        />
-        <button type="submit" className="text-black bg-green-600 rounded-lg hover:bg-green-700">Add Note</button>
-      </form>
-    </div>
 
 
 
-    </div>
-    
-  );
-};
 
-export default App;

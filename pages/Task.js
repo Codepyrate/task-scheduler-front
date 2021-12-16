@@ -4,7 +4,13 @@ import data from "../static-data.json";
 import ReadTask from "../components/Task/ReadTask";
 import EditTask from "../components/Task/EditTask";
 import Header from '../components/Header'
+import Clock from "../components/Clock";
 const App = () => {
+
+  const interval = setInterval(function() {
+    console.log('hello');
+  }, 5000);
+
   const [tasks, setTasks] = useState(data);
   const [addFormData, setAddFormData] = useState({
     TaskTitle: "",
@@ -55,6 +61,8 @@ const App = () => {
     };
 
     const newTasks = [...tasks, newTask];
+     
+
     setTasks(newTasks);
   };
 
@@ -121,16 +129,16 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task) => (
-              <Fragment>
+            {tasks.map((task , index) => (
+              <Fragment key="index">
                 {editTaskId === task.id ? (
-                  <EditTask
+                  <EditTask key="index"
                     editFormData={editFormData}
                     handleEditFormChange={handleEditFormChange}
                     handleCancelClick={handleCancelClick}
                   />
                 ) : (
-                  <ReadTask
+                  <ReadTask key="index"
                     task={task}
                     handleEditClick={handleEditClick}
                     handleDeleteClick={handleDeleteClick}
@@ -159,7 +167,7 @@ const App = () => {
           onChange={handleAddFormChange}
         />
         <input
-          type="time"
+          type="datetime-local"
           name="TaskTime"
           required="required"
           placeholder="Add time..."
@@ -170,7 +178,7 @@ const App = () => {
     </div>
 
 
-
+      <Clock task={newTask.time}/>
     </div>
     
   );

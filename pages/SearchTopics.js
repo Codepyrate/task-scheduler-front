@@ -56,7 +56,7 @@ function Search_topics() {
                                 <div className="absolute top-2 right-2"> <button onClick={() => handleinput()} className="h-10 w-20 text-white rounded-lg bg-teal-500 hover:bg-gray-400">Search 🔍</button> </div>
                             </div>
 
-                            <div class="max-w-sm rounded overflow-hidden mt-20"
+                            <div className="max-w-sm rounded overflow-hidden mt-20"
                             >
                                 <h1 className='font-bold text-4xl mb-2f italic text-teal-400'>{device.title} {device.artist} {device.name}</h1>
                                 <div className='grid grid-cols-2 justify-center'>

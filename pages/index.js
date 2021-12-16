@@ -6,12 +6,15 @@ import Footer from '../components/Footer'
 import { useAuth } from '../contexts/auth'
 import Login from './Login'
 import Task from './Task'
+import Note from "./Note"
+import Clock from '../components/Clock'
 export default function Home() {
   const { user, login } = useAuth()
-
-  console.log(user, "user index");
+  console.log(user);
+  
   return (
     <>
+  
       <Head>
 
         <title>Task Scheduler</title>
@@ -20,7 +23,7 @@ export default function Home() {
      
       {user ? (
 
-        <Task />
+        <Note user={user}/>
       ) : (
         <Login login={login} />
       )}
