@@ -38,8 +38,8 @@ const EditTask = ({
         ></input>
       </td>
       <td>
-        <button type="submit" className="bg-green-500">Save</button>
-        <button type="button" onClick={handleCancelClick}>
+        <button type="submit"  className="text-bold   hover:bg-teal-300 ml-10  text-white font-bold py-2 px-3 rounded-full">Save</button>
+        <button type="button" className="text-bold   hover:bg-red-300 ml-10  text-white font-bold py-2 px-3 rounded-full" onClick={handleCancelClick}>
           Cancel
         </button>
       </td>
