@@ -4,7 +4,7 @@ import data from "../static-data.json";
 import ReadTask from "../components/Task/ReadTask";
 import EditTask from "../components/Task/EditTask";
 import Header from '../components/Header'
-import Clock from "../components/Clock";
+import Footer from "../components/Footer";
 const App = () => {
 
   const interval = setInterval(function() {
@@ -180,7 +180,7 @@ const App = () => {
 
       <Clock task={newTask.time}/>
     </div>
-    
+
   );
 };
 

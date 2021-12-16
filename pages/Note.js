@@ -6,12 +6,8 @@ import data from "../static-data2.json";
 import ReadNote from "../components/note_folder/ReadNote";
 // import EditNote from "../components/note_folder/EditNote";
 import Header from '../components/Header'
-import axios from "axios";
-
-
-
-export default function Note(props) {
-  console.log(props.user);
+import Footer from '../components/Footer'
+const App = () => {
   const [tasks, setTasks] = useState(data);
   const [dataNotes, setDataNotes] = useState([])
  
@@ -158,40 +154,54 @@ export default function Note(props) {
             </tbody>
           </table>
         </form>
-  
-        <h1>Add a new Note</h1>
-        <form className="task-form" onSubmit={handleAddFormSubmit}>
-          <input
-            type="text"
-            name="TaskTitle"
-            required="required"
-            placeholder="Enter Note title..."
-            onChange={handleAddFormChange}
-          />
-          <input
-            type="text"
-            name="Description"
-            required="required"
-            placeholder="Add a description..."
-            onChange={handleAddFormChange}
-          />
-          <input
-            type="time"
-            name="TaskTime"
-            required="required"
-            placeholder="Add Node..."
-            onChange={handleAddFormChange}
-          />
-          <button type="submit" className="text-black bg-green-600 rounded-lg hover:bg-green-700">Add Note</button>
-        </form>
+
+        <h1 className="text-3xl text-white itilic pt-12 pb-4 font-serif antialiased md:subpixel-antialiased mt-5 text-bold"> 📝Add a new Note 📝</h1>
+
+
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0  grid  ">
+          <form className="task-form" onSubmit={handleAddFormSubmit}>
+            <input
+              className="appearance-none block w-full bg-white text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"
+              type="text"
+              name="TaskTitle"
+              required="required"
+              placeholder="Enter Note title..."
+              onChange={handleAddFormChange}
+            />
+            <input
+              className="appearance-none block w-full bg-white-300 text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"
+              type="text"
+              name="Description"
+              required="required"
+              placeholder="Add a description..."
+              onChange={handleAddFormChange}
+            />
+            <input
+              className="appearance-none block w-full bg-white text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"
+              type="time"
+              name="TaskTime"
+              required="required"
+              placeholder="Add Node..."
+              onChange={handleAddFormChange}
+            />
+
+            <button type="submit" className="bg-teal-600 ml-10 hover:bg-teal-200 text-white font-bold py-2 px-3 rounded-full" >
+              ADD
+            </button>
+          </form>
+          
+        
+
+
+        </div>
+
+
+        <Footer />
+
       </div>
-  
-  
-  
-      </div>
-  )
-}
+      
+    </div>
+  );
+};
 
-
-
-
+export default App;

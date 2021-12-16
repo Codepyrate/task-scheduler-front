@@ -7,21 +7,24 @@
 }
 
 .body {
-  background-color: black;
-  color: white;
+  background-image: url("https://cdn.pixabay.com/photo/2018/03/13/22/53/puzzle-3223941__340.jpg");
+  background-repeat: no-repeat;
+  background-size: cover ;
+  color: black ;
   font-family: "Roboto", sans-serif;
-  display: flex;
+  
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 2rem;
+  
 }
 
 
 
 .board {
-  border: 1rem solid #ff652f;
-  background: #ff652f;
+  border: 1rem solid 99FEFF;
+  background: 99FEFF;
   width: 500px;
   height: 500px;
   display: grid;
@@ -30,7 +33,7 @@
 }
 
 .squares {
-  background: #272727;
+  background: #a4f4f9;
   border: none;
   font-size: 5rem;
   
@@ -39,10 +42,10 @@
 }
 
 .X {
-  color: red;
+  color: rgb(255, 96, 96);
 }
 .O {
-  color: green;
+  color: rgb(8, 133, 138);
 }
 
 .info-wrapper {
@@ -51,15 +54,24 @@
 }
 
 
-
+#winner{
+  color: rgb(45, 45, 59);
+  
+  font-family: 'Bonbon', cursive;
+font-family: 'Hanalei Fill', cursive;
+font-family: 'Kenia', cursive;
+font-family: 'Playball', cursive;
+font-family: 'Sonsie One', cursive;
+}
 
 
 .info-wrapper button {
-  background: #272727;
-  color: white;
+  /* background: #096652; */
+  color: rgb(7, 30, 36);
   border: none;
   outline: none;
   cursor: pointer;
   padding: 0.5rem;
   margin: 0.5rem 1rem;
+  font-size: small;
 }
