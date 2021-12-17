@@ -4,7 +4,8 @@ import Link from "next/link";
 import Login from "../pages/Login";
 
 
-function Header() {
+export default function Header() {
+  
   return (
     <nav className="flex items-center justify-between  flex-wrap bg-teal-700 ... ring-4 ring-teal-300 ring-inset p-6">
       <div className="flex flex-col items-center flex-shrink-0 text-white ">
@@ -58,7 +59,17 @@ function Header() {
       </Link>
     </div>
     </nav>
-  );
+  )
 }
 
-export default Header;
+
+
+
+
+
+
+
+
+
+
+

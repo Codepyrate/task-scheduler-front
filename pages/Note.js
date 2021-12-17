@@ -4,11 +4,14 @@ import data from "../static-data2.json";
 // import ReadTask from "../components/Task/ReadTask";
 // import EditTask from "../components/Task/EditTask";
 import ReadNote from "../components/note_folder/ReadNote";
-import EditNote from "../components/note_folder/EditNote";
+// import EditNote from "../components/note_folder/EditNote";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 const App = () => {
   const [tasks, setTasks] = useState(data);
+  const [dataNotes, setDataNotes] = useState([])
+ 
+
   const [addFormData, setAddFormData] = useState({
     TaskTitle: "",
     Description: "",
@@ -108,44 +111,39 @@ const App = () => {
     setTasks(newTasks);
   };
 
-  const handleendpoint = () => {
-    console.log(input)
-    axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response => {
-      console.log(response.data)
-      return response
-    })
-  }
-  // test
+  
 
+  axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response=>{
+    console.log(response.data);})
+ 
+      
 
-  return (
-    <>
-      <Header />
-      <div className=" bg-gray-200 h-full ml-12 mr-12 mb-12 bg-[url('https://cdn.pixabay.com/photo/2015/05/31/11/28/tech-791191__340.jpg')] bg-cover bg-opacity-50" >
-
-
-        <h2 className=" text-center text-6xl italic  font-serif antialiased md:subpixel-antialiased mt-5 text-black">Note Manager</h2>
+    return (
+      <div>
+        <Header/>
+        <div className="app-container">
+          <h1 id="heading">Note Manager</h1>
         <form className="task-form" onSubmit={handleEditFormSubmit}>
-          <table className="table-auto mt-10 mr-20 ml-20 rounded md:border-collapse">
-            <thead className="font-serif text-lg  text-gray-100 ">
-              <tr className="ml-6 ">
+          <table>
+            <thead>
+              <tr>
                 <th>Note title</th>
                 <th>Description</th>
                 <th>Time</th>
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody className=" text-xs text-teal-600">
-              {tasks.map((task) => (
-                <Fragment>
+            <tbody>
+              {tasks.map((task , index) => (
+                <Fragment key="index">
                   {editTaskId === task.id ? (
-                    <EditNote
+                    <EditNote key="index"
                       editFormData={editFormData}
                       handleEditFormChange={handleEditFormChange}
                       handleCancelClick={handleCancelClick}
                     />
                   ) : (
-                    <ReadNote
+                    <ReadNote key="index"
                       task={task}
                       handleEditClick={handleEditClick}
                       handleDeleteClick={handleDeleteClick}
@@ -202,7 +200,7 @@ const App = () => {
 
       </div>
       
-    </>
+    </div>
   );
 };
 
