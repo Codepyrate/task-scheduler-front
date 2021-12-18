@@ -7,6 +7,7 @@ import ReadNote from "../components/note_folder/ReadNote";
 // import EditNote from "../components/note_folder/EditNote";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import axios from "axios"
 const App = () => {
   const [tasks, setTasks] = useState(data);
   const [dataNotes, setDataNotes] = useState([])
