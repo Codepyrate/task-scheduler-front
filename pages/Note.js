@@ -159,7 +159,7 @@ const App = () => {
         <h1 className="text-3xl text-white itilic pt-12 pb-4 font-serif antialiased md:subpixel-antialiased mt-5 text-bold"> 📝Add a new Note 📝</h1>
 
 
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0  grid  ">
+        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0  grid  ">
           <form className="task-form" onSubmit={handleAddFormSubmit}>
             <input
               className="appearance-none block w-full bg-white text-teal-700 border border-teal-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200"

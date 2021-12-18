@@ -1,10 +1,8 @@
 import React, { useState, Fragment } from "react";
-import { nanoid } from "nanoid";
 import data from "../static-data.json";
 import ReadTask from "../components/Task/ReadTask";
 import EditTask from "../components/Task/EditTask";
 import Header from '../components/Header'
-import Footer from "../components/Footer";
 import Clock from '../components/Clock';
 import axios from "axios";
 const App = () => {
