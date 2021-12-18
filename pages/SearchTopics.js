@@ -58,6 +58,9 @@ function Search_topics() {
                             </div>
                            
                             <div class="max-w-sm rounded overflow-hidden mt-20"
+
+
+
                             >
                                 <h1 className='font-bold text-4xl mb-2f italic text-teal-400'>{device.title} {device.artist} {device.name}</h1>
                                 <div className='grid grid-cols-2 justify-center'>
