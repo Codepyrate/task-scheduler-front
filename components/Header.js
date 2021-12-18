@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import dateTime from "date-time";
+// import dateTime from "date-time";
 import Link from "next/link";
 import Login from "../pages/Login";
 
@@ -22,7 +22,7 @@ export default function Header() {
           </span>
         </div>
         <div className="text-gray-100 ">
-          {dateTime({ showTimeZone: false })}
+          { }
         </div>
       </div>
 
