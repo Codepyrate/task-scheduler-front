@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
+    "cypress": "^9.1.1",
     "postcss": "^8.4.4",
     "tailwindcss": "^3.0.0"
   }
