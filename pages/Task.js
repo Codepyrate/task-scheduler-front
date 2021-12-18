@@ -5,13 +5,11 @@ import ReadTask from "../components/Task/ReadTask";
 import EditTask from "../components/Task/EditTask";
 import Header from '../components/Header'
 import Footer from "../components/Footer";
-import Clock from '../components/Clock'
+import Clock from '../components/Clock';
+import axios from "axios";
 const App = () => {
 
-  const interval = setInterval(function() {
-    console.log('hello');
-  }, 5000);
-
+  const [tasksReminder,setTasksReminder] = useState([])
   const [tasks, setTasks] = useState(data);
   const [addFormData, setAddFormData] = useState({
     TaskTitle: "",
@@ -53,18 +51,46 @@ const App = () => {
 
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
+    
+   
 
+     axios.get("https://tasks-scheduler-apps.herokuapp.com/home/tasks").then(res=>{
+       setTasksReminder(res.data);
+      //  console.log('12/17/2021 08:42:59'); 
+        console.log(res.data);
+     }).catch(err=>{
+       console.log(err);
+     })
+     
+
+    
     const newTask = {
-      id: nanoid(),
+      
       TaskTitle: addFormData.TaskTitle,
       Description: addFormData.Description,
       TaskTime: addFormData.TaskTime,
     };
+    console.log(addFormData.TaskTime.split('T'));
+   
+    
+    // const postBody = {
+      
+    //   "title": addFormData.TaskTitle,
+    //   "message": addFormData.Description,
+    //   "date": addFormData.TaskTime.split('T')[0],
+    //   "time": addFormData.TaskTime.split('T')[1],
+    //   "user": 1
+    // };
 
+    // axios({method: "post",
+    // url: 'https://tasks-scheduler-apps.herokuapp.com/home/tasks',
+    // data: postBody}).then(res=>{console.log(res);}).catch(err=>{console.log(err);})
+    
     const newTasks = [...tasks, newTask];
      
 
     setTasks(newTasks);
+    
   };
 
   const handleEditFormSubmit = (event) => {
@@ -131,7 +157,7 @@ const App = () => {
           </thead>
           <tbody>
             {tasks.map((task , index) => (
-              <Fragment key="index">
+              <Fragment key={index}>
                 {editTaskId === task.id ? (
                   <EditTask key="index"
                     editFormData={editFormData}
@@ -179,7 +205,7 @@ const App = () => {
     </div>
 
 
-      <Clock/>
+      <Clock tasks={tasksReminder}/>
     </div>
 
   );

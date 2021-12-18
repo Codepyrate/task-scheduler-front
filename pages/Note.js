@@ -136,7 +136,7 @@ const App = () => {
             </thead>
             <tbody>
               {tasks.map((task , index) => (
-                <Fragment key="index">
+                <Fragment key={index}>
                   {editTaskId === task.id ? (
                     <EditNote key="index"
                       editFormData={editFormData}
