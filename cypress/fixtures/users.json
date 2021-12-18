@@ -1,0 +1,52 @@
+[
+    {
+        "username": "muna",
+        "password": "pbkdf2_sha256$320000$I4XFltItCShV6DqRYKsMCa$faBShuQXDy4jn9Nu0rBtZYtkIVLHq5YMZAv54g1JjBI=",
+        "email": ""
+    },
+    {
+        "username": "khaled",
+        "password": "1234",
+        "email": "khaled@google.com"
+    },
+    {
+        "username": "adham",
+        "password": "pbkdf2_sha256$320000$oAmmYe3w63JrC4F8IOdr4w$Tbofm4w/jzW6HrqpvFoaL70m9EwUm82deEbxExHLKNU=",
+        "email": ""
+    },
+    {
+        "username": "ff",
+        "password": "1234",
+        "email": "morad@google.com"
+    },
+    {
+        "username": "sdfgh",
+        "password": "1234",
+        "email": "morad.wwe@live.com"
+    },
+    {
+        "username": "ssssss",
+        "password": "1234",
+        "email": "Muradakhateb@icloud.com"
+    },
+    {
+        "username": "a",
+        "password": "1234",
+        "email": "khaled@google.com"
+    },
+    {
+        "username": "a1",
+        "password": "12374",
+        "email": ""
+    },
+    {
+        "username": "morad",
+        "password": "pbkdf2_sha256$320000$9IsaJ2ciqZETDnNSZX0kOJ$cL3Z05xsVArOmWYQ4X3HTb63BTxEcEal3KZC9GurLsY=",
+        "email": "morad@morad.com"
+    },
+    {
+        "username": "mona",
+        "password": "123",
+        "email": ""
+    }
+]

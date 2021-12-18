@@ -56,8 +56,11 @@ function Search_topics() {
                                 <div className="absolute top-4 left-3 "> <i className="fa  fa-search text-gray-500  hover:text-gray-800"></i> </div> <input type="text" className="h-14 w-96 pl-10 pr-20  rounded-lg z-0 focus:shadow focus:outline-none border-gray-300" onChange={e => { setInput(e.target.value) }} name="input" placeholder=" Search anything..." />
                                 <div className="absolute top-2 right-2"> <button onClick={() => handleinput()} className="h-10 w-20 text-white rounded-lg bg-teal-500 hover:bg-gray-400">Search 🔍</button> </div>
                             </div>
+                           
+                            <div class="max-w-sm rounded overflow-hidden mt-20"
 
-                            <div className="max-w-sm rounded overflow-hidden mt-20"
+
+
                             >
                                 <h1 className='font-bold text-4xl mb-2f italic text-teal-400'>{device.title} {device.artist} {device.name}</h1>
                                 <div className='grid grid-cols-2 justify-center'>
