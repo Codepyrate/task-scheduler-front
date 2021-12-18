@@ -10,7 +10,7 @@ function Footer() {
             <footer className="h-16 mt-56 bg-teal-700 ring-4 ring-teal-300 ring-inset">
 
 
-                <div class="grid grid-cols-7 gap-4 items-center m-7 text-white">
+                <div className="grid grid-cols-7 gap-4 items-center m-7 text-white">
                     <a >©Codepyrate| LTUC - ASAC</a>
                     <a className="ml-12">Contact us</a>
                     <a className="">Contact Support</a>
@@ -18,7 +18,7 @@ function Footer() {
                     
                     {/* <div className="gap-2 ml-1">test<p><AiFillLinkedin /></p></div> */}
 
-                    <div class="grid grid-cols-7 m-7 text-white text-lg ml-2 ">        
+                    <div className="grid grid-cols-7 m-7 text-white text-lg ml-2 ">        
                     <a className="" ><AiFillLinkedin /></a>
                     <a className="ml-0 mr-9"><AiFillFacebook /></a>
                     <a className=""> <AiFillMail/></a>

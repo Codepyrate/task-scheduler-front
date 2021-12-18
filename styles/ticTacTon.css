@@ -23,8 +23,8 @@
 
 
 .board {
-  border: 1rem solid 99FEFF;
-  background: 99FEFF;
+  border: 1rem solid #99FEFF;
+  background: #99FEFF;
   width: 500px;
   height: 500px;
   display: grid;
