@@ -60,6 +60,17 @@ const App = () => {
       Description: addFormData.Description,
       TaskTime: addFormData.TaskTime,
     };
+    const postBody = {
+      
+      "title": addFormData.TaskTitle,
+      "message": addFormData.Description,
+      "date": addFormData.TaskTime,
+      "user": 1
+    };
+
+    axios({method: "post",
+    url: 'https://tasks-scheduler-apps.herokuapp.com/home/notes',
+    data: postBody}).then(res=>{console.log(res);}).catch(err=>{console.log(err);})
 
     const newTasks = [...tasks, newTask];
     setTasks(newTasks);
@@ -113,11 +124,6 @@ const App = () => {
   };
 
   
-
-  axios.get('https://tasks-scheduler-apps.herokuapp.com/home/notes').then(response=>{
-    console.log(response.data);})
- 
-      
 
     return (
       <div>

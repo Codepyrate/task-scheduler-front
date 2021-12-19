@@ -71,18 +71,18 @@ const App = () => {
     console.log(addFormData.TaskTime.split('T'));
    
     
-    // const postBody = {
+    const postBody = {
       
-    //   "title": addFormData.TaskTitle,
-    //   "message": addFormData.Description,
-    //   "date": addFormData.TaskTime.split('T')[0],
-    //   "time": addFormData.TaskTime.split('T')[1],
-    //   "user": 1
-    // };
+      "title": addFormData.TaskTitle,
+      "message": addFormData.Description,
+      "date": addFormData.TaskTime.split('T')[0],
+      "time": addFormData.TaskTime.split('T')[1],
+      "user": 1
+    };
 
-    // axios({method: "post",
-    // url: 'https://tasks-scheduler-apps.herokuapp.com/home/tasks',
-    // data: postBody}).then(res=>{console.log(res);}).catch(err=>{console.log(err);})
+    axios({method: "post",
+    url: 'https://tasks-scheduler-apps.herokuapp.com/home/tasks',
+    data: postBody}).then(res=>{console.log(res);}).catch(err=>{console.log(err);})
     
     const newTasks = [...tasks, newTask];
      
